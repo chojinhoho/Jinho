@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/* reset */
+* {margin: 0; padding: 0;}
+body {font-family: '맑은고딕',sans-serif;}
+ul,li {margin: 0; padding: 0; list-style:none;}
+img {border:0;}
+a {text-decoration: none;}
+
+/* 좌우여백 15% 세팅 - 로고, 메뉴영역, 썸네일이미지영역, 공지+sns 영역*/
+.header_box, .con, .info {padding: 0 15px 0 15px;}
+
+/* ==== mobile ==== */
+
+/* ===================================
+    header 
+======================================*/
+
+/* logo */
+header h1.logo img{width: 50px; height: 50px; margin-top: 5px;}
+
+/* toggle */
+header a.menubtn {display: block; color: #007042; font-size: 30px; background: #fff; margin: 0 0 5px 0; cursor:pointer; position: absolute; top: 13px; right: 15px;}
+header a.menubtn:hover {color: #000;}
+
+/* toggle 클릭시 노출 되는 menu */
+header nav#menu {display: none; font-weight: bold; margin-top: 20px; margin-bottom: 15px; text-align: center;}
+header nav#menu ul li a {display: block; padding: 10px; color: #000; font-size: 15px; margin-bottom: 5px;}
+header nav#menu ul li a:hover,
+header nav#menu ul li a:focus {background: #eee; border-radius: 50px;}
+
+/* ===================================
+    center
+======================================*/
+
+/* slide image */
+#center .slide {position: relative; border-top: 1px solid #ddd;}
+#center .slide img.topimg {max-width: 100%; height: auto;}
+#center .slide p.text {font-size: 2em; font-weight: 500; color: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; opacity: 0.7; text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);}
+
+/* summary image */
+#center .con .summary {margin: 20px 0;}
+#center .con .summary a {display: block; background: #222; color: #fff; text-align: center;}
+#center .con .summary a:hover {opacity: 0.8;}
+#center .con .summary a i {display: block; padding-top: 40px; padding-bottom: 40px;}
+#center .con .summary a i.thum1 {background: url("../images/thum1.jpg")no-repeat 50% 50%;}
+#center .con .summary a i.thum2 {background: url("../images/thum2.jpg")no-repeat 50% 50%;}
+#center .con .summary a i.thum3 {background: url("../images/thum3.jpg")no-repeat 50% 50%;}
+#center .con .summary a h2 {padding:15px 0 15px 0; font-size: 17px;}
+#center .con .summary a p {padding: 10px 0 12px 0; font-size: 13px; background: #727070;}
+
+/* notice */
+#center .notice {border: 5px solid #ddd; padding: 20px;}
+#center .notice h3 {margin-left: 0;}
+#center .notice ul li a {display: block; padding: 5px 0 5px 0; color: #000; border-bottom: 1px solid #ddd; font-size: 13px;}
+#center .notice ul li a:hover {background: #eee;}
+#center .notice ul li a span.time {float: right; width: 60px; color: #888;}
+
+/* sns */
+#center .sns .follow-info {position: relative; margin: 10px 0 20px 0; padding: 10px; background: #ddd; font-size: 14px; text-align: center; font-weight: bold; color: #666; border-radius: 4px;}
+#center .sns .follow-info::after {content: ''; position: absolute; top: 100%; left: 50%; border: 15px solid transparent; border-top-color: #ddd; width: 0; height: 0; margin-left: -13px;}
+#center .sns ul li a {display: block; margin-bottom: 10px; border-radius: 4px; font-size: 14px; color: #fff; text-align: center; padding: 10px;}
+#center .sns ul li a:hover {opacity: 0.8;}
+#center .sns ul li a.twitter {background: #63bafb;}
+#center .sns ul li a.facebook {background: #3a5895;}
+#center .sns ul li a.google {background: #d84b38;}
+
+/* ===================================
+    footer
+======================================*/
+
+footer {background: #ddd; height: 70px; padding: 15px 0 15px 0;}
+footer .copyright p {margin-top: 10px; font-size: 12px; text-align: center; line-height: 1.7;}
+footer .copyright p strong a {color: #3e2f27;}
+footer .copyright p strong a:hover {color: #007042;}
+
+/* ==== pc - min 768px ==== */
+
+@media (min-width:768px){
+
+    /* header */
+    .header_inner, .slide, .info, .con {margin: 0 auto;}
+    header .header_box {margin-top: 10px; margin-bottom: 0;}
+    header .header_box::after {content: ''; display: block; clear: both;}
+    header .header_box h1.logo {float: left; width: auto;}
+    header .header_box h1.logo img {margin-top: -6px;}
+    header .header_box h1.menus {float: right; width: auto;}
+
+    /* toggle - pc에서 가리기 */
+    header a.menubtn {display: none;}
+
+    header nav#menu {display: block; margin-top: 4px;}
+    header nav#menu ul {float: right; margin-right: -9px;}
+    header nav#menu ul::after {content: ''; display: block; clear: both;}
+    header nav#menu ul li {float: left; margin-right: 10px;}
+    header nav#menu ul li a {display: block; padding: 10px; margin-bottom: 5px; color: #000; font-size: 16px;}
+    header nav#menu ul li a:hover,
+    header nav#menu ul li a:focus {background: #eee; border-radius: 50px;}
+
+    /* slide */
+    #center .slide p.text {font-size: 7em;}
+
+    /* summary image */
+    #center .con::after {content:''; display: block; clear:both;}
+    #center .con .summary h2 {padding-top: 7px; padding-bottom: 7px;}
+    #center .con .con1 {float: left; width: 32%; margin-right: 2%;}
+    #center .con .con2 {float: left; width: 32%; margin-right: 2%;}
+    #center .con .con3 {float: left; width: 32%;}
+
+    #center .info::after {content:''; display: block; clear:both;}
+
+    /* notice */
+    #center .info .notice {margin-right: 10px;}
+    #center .info .info_inner {float: left; width: 68%; padding-right: 20px; box-sizing: border-box;}
+
+    /* sns */
+    #center .sns {float: left; width: 32%; margin-top: -10px;}
+
+}
